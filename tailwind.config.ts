@@ -22,19 +22,11 @@ export default {
       'gray-900': '#0f172a',
       'gray-950': '#020617',
       'black-950': '#020617',
-      'btnDark': '#334155',
     },
     borderRadius: {
       6: '6px',
       12: '12px',
-      'full': '9999px',
-      '9.999': '9.999px',
-    },
-    width: {
-      67: '67px',
-    },
-    height: {
-      36: '36px',
+      full: '9999px',
     },
   },
   plugins: [],
