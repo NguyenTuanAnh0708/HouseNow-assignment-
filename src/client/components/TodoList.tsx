@@ -1,15 +1,15 @@
 import type { SVGProps } from 'react'
+import type { FilterTabType } from '../constant/todoApp'
+import type { z } from 'zod'
+import type { TodoSchema } from '@/server/api/schemas/todo-schemas'
+
 import * as Checkbox from '@radix-ui/react-checkbox'
-import { api } from '@/utils/client/api'
 import clsx from 'clsx'
-import { TodoSchema } from '@/server/api/schemas/todo-schemas'
-import { z } from 'zod'
 import { useAutoAnimate } from '@formkit/auto-animate/react'
-import {
-  TODO_STATUS,
-  FilterTabType,
-  FILTER_TAB_DATA,
-} from '../constant/todoApp'
+
+import { api } from '@/utils/client/api'
+
+import { TODO_STATUS, FILTER_TAB_DATA } from '../constant/todoApp'
 
 /**
  * QUESTION 3:

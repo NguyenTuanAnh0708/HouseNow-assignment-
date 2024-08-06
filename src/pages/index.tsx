@@ -1,9 +1,12 @@
+import type { FilterTabType } from '@/client/constant/todoApp'
+
+import { useState } from 'react'
+import * as Tabs from '@radix-ui/react-tabs'
+import clsx from 'clsx'
+
+import { FILTER_TABS } from '@/client/constant/todoApp'
 import { CreateTodoForm } from '@/client/components/CreateTodoForm'
 import { TodoList } from '@/client/components/TodoList'
-import * as Tabs from '@radix-ui/react-tabs'
-import { FILTER_TABS, FilterTabType } from '@/client/constant/todoApp'
-import { useState } from 'react'
-import clsx from 'clsx'
 
 /**
  * QUESTION 6:
