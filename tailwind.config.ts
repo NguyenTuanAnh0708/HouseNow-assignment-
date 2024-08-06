@@ -21,6 +21,7 @@ export default {
       'gray-800': '#1e293b',
       'gray-900': '#0f172a',
       'gray-950': '#020617',
+      'black-950': '#020617',
     },
     borderRadius: {
       6: '6px',

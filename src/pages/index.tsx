@@ -1,5 +1,9 @@
 import { CreateTodoForm } from '@/client/components/CreateTodoForm'
 import { TodoList } from '@/client/components/TodoList'
+import * as Tabs from '@radix-ui/react-tabs'
+import { FILTER_TABS, FilterTabType } from '@/client/constant/todoApp'
+import { useState } from 'react'
+import clsx from 'clsx'
 
 /**
  * QUESTION 6:
@@ -17,6 +21,9 @@ import { TodoList } from '@/client/components/TodoList'
  */
 
 const Index = () => {
+  const [currentFilter, setCurrentFilter] = useState<FilterTabType>(
+    FILTER_TABS[0] as FilterTabType
+  )
   return (
     <main className="mx-auto w-[480px] pt-12">
       <div className="rounded-12 bg-white p-8 shadow-sm">
@@ -24,8 +31,31 @@ const Index = () => {
           Todo App
         </h1>
 
+        <Tabs.Root className="TabsRoot" defaultValue={currentFilter}>
+          <Tabs.List
+            className="TabsList flex gap-x-2 pt-10"
+            aria-label="Manage your account"
+          >
+            {FILTER_TABS.map((filter, idx) => (
+              <Tabs.Trigger
+                key={idx}
+                className={clsx(
+                  'TabsTrigger rounded-[9.999px] border border-[#E2E8F0] px-6 py-3',
+                  {
+                    'bg-[#334155] text-white': currentFilter == filter,
+                  }
+                )}
+                value="filter"
+                onClick={() => setCurrentFilter(filter)}
+              >
+                {filter}
+              </Tabs.Trigger>
+            ))}
+          </Tabs.List>
+        </Tabs.Root>
+
         <div className="pt-10">
-          <TodoList />
+          <TodoList filterTab={currentFilter} />
         </div>
 
         <div className="pt-10">
